@@ -13,7 +13,7 @@ deps:
 	#godep save github.com/zenazn/goji
 
 clean:
-	rm -f $(BINARY)
+	rm -f $(BINARY) $(BINARY)-linux $(BINARY)-rpi $(BINARY)-syno
 	go fmt *.go
 
 bootstrap:
