@@ -74,7 +74,10 @@ func main() {
 
 	fmt.Println("Creating mDNS listener")
 	//mdns.Lookup("_googlecast._tcp", peers)
+
+    // this will panic without IF_MULTICAST, causing the program to exit
     mdns.Lookup("_http._tcp", peers)
+
 	fmt.Println("Creating HTTP server")
 	goji.Serve() // port 8000 by default
 	close(peers)
