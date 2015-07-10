@@ -25,11 +25,20 @@
         <div class="section">
             <div class="container">
                 <h3 class="section-heading">Known Peers</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
                         {{range $index, $element := .Peers}}
-                        <ul>
-                            <li><code>{{$element}}</code></li>
-                        </ul>
+                        <tr>
+                            <td>{{$element}}</td>
+                        </tr>
                         {{end}}
+                    </tbody>
+                </table>
             </div>
         </div>
         <!-- Environment table –––––––––––––––––––––––––––––––––––––––––––––––––– -->
