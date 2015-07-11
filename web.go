@@ -59,24 +59,24 @@ func main() {
 	go func() {
 		fmt.Println("Waiting for peers")
 		for entry := range peers {
-            known := false
-            for _, e := range c.Peers {
-                if entry.Name == e {
-                    known = true
-                }
-            }
-            if known == false {
-			    fmt.Println("Got new peer", entry.Name)
-			    c.Peers = append(c.Peers, entry.Name)
-            }
+			known := false
+			for _, e := range c.Peers {
+				if entry.Name == e {
+					known = true
+				}
+			}
+			if known == false {
+				fmt.Println("Got new peer", entry.Name)
+				c.Peers = append(c.Peers, entry.Name)
+			}
 		}
 	}()
 
 	fmt.Println("Creating mDNS listener")
 	//mdns.Lookup("_googlecast._tcp", peers)
 
-    // this will panic without IF_MULTICAST, causing the program to exit
-    mdns.Lookup("_http._tcp", peers)
+	// this will panic without IF_MULTICAST, causing the program to exit
+	mdns.Lookup("_http._tcp", peers)
 
 	fmt.Println("Creating HTTP server")
 	goji.Serve() // port 8000 by default
