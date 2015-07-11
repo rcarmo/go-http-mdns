@@ -2,6 +2,8 @@ export GOPATH:=$(shell pwd)/vendor
 export PATH:=$(PATH):$(GOPATH)/bin
 BINARY=web
 
+.PHONY: deps clean bootstrap container print-%
+
 $(BINARY): *.go
 	go build -o $(BINARY)
 
