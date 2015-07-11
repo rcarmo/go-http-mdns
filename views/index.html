@@ -11,51 +11,29 @@
         <link rel="stylesheet" href="static/skeleton.css">
     </head>
     <body>
-        <div class="section">
-            <div class="container">
-                <h1>{{.Hostname}}</h1>
-            </div>
-        </div>
-        <div class="section">
-            <div class="container">
-                <h3 class="section-heading">Known Peers</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {{range $index, $element := .Peers}}
-                        <tr>
-                            <td>{{$element}}</td>
-                        </tr>
-                        {{end}}
-                    </tbody>
-                </table>
-            </div>
-        </div>
+        <div class="section"><div class="container">
+            <h1>{{.Hostname}}</h1>
+        </div></div>
+        <div class="section"><div class="container">
+            <h3 class="section-heading">Known Peers</h3>
+            <table><thead><tr><th>Name</th></tr></thead><tbody>
+                {{range $index, $element := .Peers}}
+                <tr>
+                    <td>{{$element}}</td>
+                </tr>
+                {{end}}
+            </tbody></table>
+        </div></div>
         <!-- Environment table –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-        <div class="section">
-            <div class="container">
-                <h3 class="section-heading">Environment</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Variable</th>
-                            <th>Value</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {{range $index, $element := .Env}}
-                        <tr>
-                            <td>{{ $element.Name }}</td>
-                            <td>{{ $element.Value }}</td>
-                        </tr>
-                        {{ end }}
-                    </tbody>
-                </table>
-            </div>
-        </div>
+        <div class="section"><div class="container"><h3 class="section-heading">Environment</h3>
+            <table><thead><tr><th>Variable</th><th>Value</th></tr></thead><tbody>
+                {{range $index, $element := .Env}}
+                <tr>
+                    <td>{{ $element.Name }}</td>
+                    <td>{{ $element.Value }}</td>
+                </tr>
+                {{ end }}
+            </tbody></table>
+        </div></div>
     </body>
 </html>
