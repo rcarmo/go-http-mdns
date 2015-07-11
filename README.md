@@ -28,7 +28,7 @@ docker run -ti rcarmo/go-http-mdns
 
 ## Building under Mac OS X
 
-If you're on a Mac and have Go from Homebrew, you need to enable cross-compiling for Linux like so:
+If you're on a Mac and have Go from [Homebrew](http://brew.sh), you need to enable cross-compiling for Linux like so:
 
 ```bash
 cd /usr/local/opt/go/libexec/src/
