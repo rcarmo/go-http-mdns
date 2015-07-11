@@ -25,7 +25,6 @@ type Context struct {
 }
 
 var c Context
-var port int
 
 func renderIndex(wc web.C, w http.ResponseWriter, r *http.Request) {
 	_ = templates.ExecuteTemplate(w, "index.html", &c)
